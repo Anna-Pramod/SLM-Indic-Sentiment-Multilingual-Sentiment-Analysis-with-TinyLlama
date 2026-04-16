@@ -38,9 +38,10 @@ Configure Environment: Create a .env file based on .env.example and add your Hug
 Data Preprocessing
 The llm_engineering/application/preprocessing.py script maps the dataset to structured prompts
 .
-# Format: Analyze the sentiment of this review.
-# Input: [Sentence in Indian Language]
-# Response: [Positive/Negative/Neutral]
+Format: Analyze the sentiment of this review.
+Input: [Sentence in Indian Language]
+Response: [Positive/Negative/Neutral]
+
 Training
 Execute the training pipeline using the centralized YAML configuration
 :
