@@ -1,0 +1,2 @@
+# SLM-Indic-Sentiment-Multilingual-Sentiment-Analysis-with-TinyLlama
+This project provides a production-ready framework for fine-tuning TinyLlama (1.1B) to perform sentiment analysis on product reviews across 11 Indian languages (plus English) . By leveraging Unsloth and LoRA, this repository enables high-performance fine-tuning on consumer-grade hardware with significantly reduced memory requirements
