@@ -33,6 +33,7 @@ The final system is based on:
 
 ## Repository Structure
 
+```bash
 .
 ├── README.md
 ├── app.py                  # Gradio demo
@@ -42,6 +43,7 @@ The final system is based on:
 ├── docs/                   # Documentation
 ├── notebooks/              # Original experimentation
 └── requirements.txt
+```
 
 ## Why this project matters
 
