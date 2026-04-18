@@ -8,6 +8,16 @@ This repository documents an end-to-end workflow for:
 - evaluating the model on held-out data,
 - and exposing the model through an interactive **Gradio** demo.
 
+## 🚀 Live Demo
+
+👉 **Try it here:**  
+https://huggingface.co/spaces/annavivin/tinyllama-indic-sentiment-demo  
+
+The demo allows users to:
+- input text in English or Indic languages,
+- receive real-time sentiment predictions,
+- and inspect the model’s raw generation output.
+
 ## Project Summary
 
 This project explores whether a **small language model (SLM)** can be adapted for multilingual sentiment classification across Indic languages while remaining practical on commodity hardware such as a **15 GB NVIDIA T4 GPU on Google Colab**.
