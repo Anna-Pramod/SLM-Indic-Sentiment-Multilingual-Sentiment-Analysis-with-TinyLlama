@@ -18,6 +18,8 @@ The demo allows users to:
 - receive real-time sentiment predictions,
 - and inspect the model’s raw generation output.
 
+
+
 ## Project Summary
 
 This project explores whether a **small language model (SLM)** can be adapted for multilingual sentiment classification across Indic languages while remaining practical on commodity hardware such as a **15 GB NVIDIA T4 GPU on Google Colab**.
@@ -28,6 +30,18 @@ The final system is based on:
 - **Dataset:** `dhruv0808/indic_sentiment_analyzer`
 - **Task:** classify text into exactly one of **Positive**, **Negative**, or **Neutral**
 - **Deployment target:** Gradio interface hosted on **Hugging Face Spaces**
+
+## Repository Structure
+
+.
+├── README.md
+├── app.py                  # Gradio demo
+├── api/                    # FastAPI inference service
+├── scripts/                # Training and inference scripts
+├── src/indic_sentiment/    # Core pipeline (preprocessing, model, training)
+├── docs/                   # Documentation
+├── notebooks/              # Original experimentation
+└── requirements.txt
 
 ## Why this project matters
 
@@ -127,31 +141,6 @@ The demo is intended for:
 - project showcasing,
 - and quick qualitative testing across languages.
 
-The deployment path is documented in [`docs/deployment.md`](docs/deployment.md).
-
-## Hugging Face artifacts
-
-### Fine-tuned model
-- `annavivin/tinyllama-indic-sentiment-full`
-
-### Intended app flow
-- user enters text in English or an Indic language,
-- the model generates one of the three allowed labels,
-- the application extracts the final answer segment,
-- and the UI returns a clean sentiment output.
-
-## Repository structure
-
-```text
-.
-├── README.md
-├── app.py
-├── requirements.txt
-└── docs/
-    ├── training_and_evaluation.md
-    └── deployment.md
-```
-
 ## Key lessons from the project
 
 This project surfaced a few important engineering lessons:
@@ -167,18 +156,6 @@ This project surfaced a few important engineering lessons:
 
 4. **Small models require disciplined optimization.**  
    Learning rate, packing, sequence length, and adapter rank all materially affect stability on low-memory hardware.
-
-## Current scope
-
-This repository currently documents:
-- the project rationale,
-- the fine-tuning setup,
-- evaluation design,
-- and the interactive deployment path.
-
-It is intended to serve both as:
-- a reproducible project record,
-- and a clear portfolio-ready explanation of the system.
 
 ## Future improvements
 
@@ -198,6 +175,48 @@ This project builds on the open-source ecosystems around:
 - Unsloth,
 - and the maintainers of the Indic sentiment dataset.
 
-## License
+## How to Use This Repository
 
-Add a license file if you intend to open-source the project more formally.
+This repository is designed to support the full lifecycle of the project — from training to deployment and interaction.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Anna-Pramod/SLM-Indic-Sentiment-Multilingual-Sentiment-Analysis-with-TinyLlama.git
+cd SLM-Indic-Sentiment-Multilingual-Sentiment-Analysis-with-TinyLlama
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Train the model
+
+```bash
+python scripts/train.py
+```
+
+### 4. Run inference locally
+```bash
+python scripts/predict.py --text "The product quality is excellent"
+```
+
+### 5. Launch the Gradio demo locally
+
+```bash
+python app.py
+```
+
+### 6. Run the FastAPI inference service
+```bash
+uvicorn api.main:app --reload
+```
+
+### 7. Example Request
+```bash
+curl -X POST "http://127.0.0.1:8000/predict" \
+-H "Content-Type: application/json" \
+-d '{"text": "The movie was amazing"}'
+```
