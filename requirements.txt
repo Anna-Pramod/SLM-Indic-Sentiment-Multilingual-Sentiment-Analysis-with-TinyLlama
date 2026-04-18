@@ -1,1 +1,14 @@
-
+torch
+transformers
+datasets
+trl
+accelerate
+peft
+bitsandbytes
+unsloth
+gradio
+fastapi
+uvicorn
+scikit-learn
+pandas
+python-dotenv
