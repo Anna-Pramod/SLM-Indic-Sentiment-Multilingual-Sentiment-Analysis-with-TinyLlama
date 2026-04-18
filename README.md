@@ -10,7 +10,7 @@ This repository documents an end-to-end workflow for:
 
 ## Project Summary
 
-This project explores whether a **small language model (SLM)** can be adapted for multilingual sentiment classification across Indic languages while remaining practical on commodity hardware such as a **10 GB NVIDIA T4 GPU on Google Colab**.
+This project explores whether a **small language model (SLM)** can be adapted for multilingual sentiment classification across Indic languages while remaining practical on commodity hardware such as a **15 GB NVIDIA T4 GPU on Google Colab**.
 
 The final system is based on:
 - **Base model:** TinyLlama / TinyLlama-chat family
@@ -71,7 +71,7 @@ The model is fine-tuned with:
 
 ### Hardware constraint
 
-A key design requirement for this project was that training should remain feasible on a **10 GB T4 GPU** in Google Colab. To make that work, the project uses:
+A key design requirement for this project was that training should remain feasible on a **15 GB T4 GPU** in Google Colab. To make that work, the project uses:
 - 4-bit quantization,
 - small batch sizes,
 - gradient accumulation,
